@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Register - Jewelbox</title>
+    <link rel="icon" href="img/jewel.svg" type="image/svg+xml" />
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      body {
+        font-family: "Segoe UI", sans-serif;
+      }
+    </style>
+  </head>
+  <body class="bg-pink-50">
+    <section
+      class="min-h-screen flex items-center justify-center bg-gradient-to-br from-pink-100 via-white to-purple-100"
+    >
+      <div
+        class="bg-white p-8 rounded-2xl shadow-2xl max-w-xl w-full border border-pink-200"
+      >
+        <h2 class="text-3xl font-bold text-purple-800 mb-2">
+          Daftar Akun Jewelbox
+        </h2>
+        <p class="text-sm text-purple-600 mb-6">
+          Buat akun untuk belanja perhiasan terbaik dari Jewelbox.
+        </p>
+
+        <form id="registerForm" class="flex flex-col gap-4">
+          <div>
+            <input
+              id="nama"
+              type="text"
+              placeholder="Nama Lengkap"
+              class="p-3 border border-purple-200 rounded-xl w-full focus:outline-none focus:ring-2 focus:ring-purple-300"
+              required
+            />
+            <small id="error-nama" class="text-red-600 text-sm"></small>
+          </div>
+
+          <div>
+            <input
+              id="username"
+              type="text"
+              placeholder="Username"
+              class="p-3 border border-purple-200 rounded-xl w-full focus:outline-none focus:ring-2 focus:ring-purple-300"
+              required
+            />
+            <small id="error-username" class="text-red-600 text-sm"></small>
+          </div>
+
+          <div>
+            <input
+              id="email"
+              type="email"
+              placeholder="Email"
+              class="p-3 border border-purple-200 rounded-xl w-full focus:outline-none focus:ring-2 focus:ring-purple-300"
+              required
+            />
+            <small id="error-email" class="text-red-600 text-sm"></small>
+          </div>
+
+          <div>
+            <input
+              id="password"
+              type="password"
+              placeholder="Password"
+              class="p-3 border border-purple-200 rounded-xl w-full focus:outline-none focus:ring-2 focus:ring-purple-300"
+              required
+            />
+            <small id="error-password" class="text-red-600 text-sm"></small>
+          </div>
+
+          <div>
+            <input
+              id="whatsapp"
+              type="text"
+              placeholder="Contoh: 6281234567890"
+              class="p-3 border border-purple-200 rounded-xl w-full focus:outline-none focus:ring-2 focus:ring-purple-300"
+              required
+            />
+            <small id="error-whatsapp" class="text-red-600 text-sm"></small>
+          </div>
+
+          <div>
+            <select
+              id="role"
+              class="p-3 border border-purple-200 rounded-xl w-full focus:outline-none focus:ring-2 focus:ring-purple-300"
+              required
+            >
+              <option value="">-- Daftar Sebagai --</option>
+              <option value="pelanggan">Pelanggan</option>
+              <option value="kasir">Kasir</option>
+              <option value="admin">Admin System</option>
+            </select>
+            <small id="error-role" class="text-red-600 text-sm"></small>
+          </div>
+
+          <button
+            type="submit"
+            class="bg-purple-700 text-white py-3 rounded-xl hover:bg-purple-800 duration-300 font-semibold shadow-md"
+          >
+            Daftar Sekarang
+          </button>
+        </form>
+
+        <div id="loadingSpinner" class="hidden text-center text-pink-500 mt-4">
+          <p>Memproses...</p>
+        </div>
+        <p class="mt-6 text-sm text-center text-gray-700">
+          Sudah punya akun?
+          <a
+            href="login.html"
+            class="text-purple-700 font-medium hover:underline"
+            >Login di sini</a
+          >
+        </p>
+      </div>
+    </section>
+  </body>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <script type="module" src="register.js"></script>
+</html>

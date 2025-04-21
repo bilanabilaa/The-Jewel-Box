@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dashboard Pelanggan | JewelBox</title>
+    <link rel="icon" href="img/jewel.svg" type="image/svg+xml" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/feather-icons"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  </head>
+  <body class="bg-gray-100 font-sans">
+    <!-- Navbar -->
+    <nav
+      class="bg-white shadow-md px-6 py-4 flex justify-between items-center sticky top-0 z-50"
+    >
+      <div class="flex items-center space-x-3">
+        <img
+          src="img/jewel.svg"
+          alt="JewelBox Logo"
+          class="h-10 w-10 rounded-full shadow-md border border-pink-400"
+        />
+        <h1 class="text-2xl font-bold text-purple-800 tracking-wide">
+          JewelBox
+        </h1>
+      </div>
+      <div class="flex items-center gap-4">
+        <div class="text-sm text-right">
+          <p class="font-medium" id="userName">Pengguna</p>
+          <p class="text-xs text-gray-500" id="userEmail">email@example.com</p>
+        </div>
+        <button
+          id="logoutBtn"
+          class="bg-red-500 text-white px-3 py-1 rounded hover:bg-red-600 text-sm"
+        >
+          Logout
+        </button>
+      </div>
+    </nav>
+
+    <!-- Konten -->
+    <section class="bg-pink-50 py-8 px-4" id="products">
+      <h2 class="text-3xl font-bold text-center text-purple-800 mb-8">
+        ✨ Produk Unggulan JewelBox ✨
+      </h2>
+
+      <!-- Filter Box -->
+      <div
+        class="max-w-6xl mx-auto bg-white p-6 rounded-3xl shadow-xl space-y-6 border border-pink-100"
+      >
+        <!-- Baris 1: Pencarian & Reset -->
+        <div class="flex flex-col sm:flex-row gap-4">
+          <input
+            type="text"
+            id="searchInput"
+            placeholder="🔍 Cari Kotak Perhiasan Elegan..."
+            class="flex-1 px-5 py-3 border border-pink-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-400 transition"
+          />
+          <button
+            onclick="resetFilter()"
+            class="px-5 py-3 bg-red-400 text-white rounded-lg hover:bg-red-500 transition"
+          >
+            🔄 Reset
+          </button>
+        </div>
+
+        <!-- Baris 2: Sorting & Harga -->
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
+          <select
+            id="sortHarga"
+            class="px-4 py-3 border border-purple-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-400 transition"
+          >
+            <option value="">💸 Urutkan Harga</option>
+            <option value="terendah">Harga Terendah</option>
+            <option value="tertinggi">Harga Tertinggi</option>
+          </select>
+
+          <input
+            type="number"
+            id="hargaMin"
+            placeholder="💰 Harga Min"
+            class="px-4 py-3 border border-pink-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-400 transition"
+          />
+
+          <input
+            type="number"
+            id="hargaMax"
+            placeholder="💰 Harga Max"
+            class="px-4 py-3 border border-pink-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-400 transition"
+          />
+        </div>
+
+        <!-- Baris 3: Filter Bahan -->
+        <div>
+          <select
+            id="filterBahan"
+            class="w-full sm:w-1/2 px-4 py-3 border border-purple-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-400 transition"
+          >
+            <option value="">🎀 Semua Bahan</option>
+            <option value="Mutiara Laut & Rantai Emas">
+              Mutiara Laut & Rantai Emas
+            </option>
+            <option value="Perak & Kristal Swarovski">
+              Perak & Kristal Swarovski
+            </option>
+            <option value="Batu Ametis & Rantai Baja">
+              Batu Ametis & Rantai Baja
+            </option>
+            <option value="purplegold Plated & Zircon">
+              purplegold Plated & Zircon
+            </option>
+          </select>
+        </div>
+      </div>
+
+      <!-- Container Produk -->
+      <div
+        id="product-container"
+        class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 mt-12 px-4 max-w-7xl mx-auto transition-all duration-300 ease-in-out"
+      ></div>
+    </section>
+
+    <!-- Footer start -->
+    <footer class="bg-white border-t mt-12">
+      <div
+        class="container mx-auto px-4 py-8 text-center text-sm text-gray-600"
+      >
+        <p>Alamat: Jl. Permata Indah No. 123, Jakarta</p>
+        <p>Email: contact@jewelbox.com | Telp: +62 812-3456-7890</p>
+        <p class="mt-4">&copy; 2024 The Jewel Box. All rights reserved.</p>
+      </div>
+    </footer>
+
+    <!-- Footer end -->
+
+    <!-- Sticky Cart -->
+    <div
+      id="stickyCart"
+      class="fixed top-24 right-6 bg-white/30 backdrop-blur-lg border border-purple-300 text-purple-600 px-5 py-3 rounded-full shadow-xl flex items-center gap-3 cursor-pointer hover:bg-purple-100 hover:text-purple-700 transition-all duration-300 z-50"
+    >
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        class="h-6 w-6 text-purple-600 animate-bounce-slow"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke="currentColor"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-1.5 6H19m-5 0a1 1 0 001 1m-6 0a1 1 0 01-1-1"
+        />
+      </svg>
+      <span> <span id="cartCount" class="font-semibold">0</span> item </span>
+    </div>
+
+    <!-- Side Panel Keranjang -->
+    <div
+      id="cartPanel"
+      class="fixed top-0 right-0 w-80 h-full bg-white shadow-lg transform translate-x-full transition-transform duration-300 z-50 overflow-y-auto"
+    >
+      <div class="p-4 border-b flex justify-between items-center">
+        <h3 class="text-lg font-bold">Keranjang Belanja</h3>
+        <button
+          id="closeCartPanel"
+          class="text-gray-600 hover:text-red-600 text-xl"
+        >
+          ✕
+        </button>
+      </div>
+      <div id="cartContainer" class="p-4 space-y-4">
+        <!-- Isi keranjang akan ditampilkan di sini -->
+      </div>
+    </div>
+    <style>
+      @keyframes bounce-slow {
+        0%,
+        100% {
+          transform: translateY(0);
+        }
+        50% {
+          transform: translateY(-4px);
+        }
+      }
+      .animate-bounce-slow {
+        animation: bounce-slow 2.5s infinite;
+      }
+    </style>
+
+    <!-- Feather Icons -->
+    <script>
+      feather.replace();
+    </script>
+
+    <!-- Modal Struk -->
+    <div
+      id="strukModal"
+      class="fixed inset-0 bg-black bg-opacity-50 hidden flex justify-center items-center z-50"
+    >
+      <div class="bg-white p-6 rounded-lg w-full max-w-md relative">
+        <h2 class="text-xl font-bold mb-4">🧾 Struk Belanja</h2>
+        <div id="strukContent" class="text-sm space-y-2"></div>
+        <button
+          onclick="document.getElementById('strukModal').classList.add('hidden')"
+          class="mt-4 bg-purple-600 text-white px-4 py-2 rounded-md"
+        >
+          Tutup
+        </button>
+      </div>
+    </div>
+
+    <!-- Script Produk & Auth -->
+    <script type="module" src="dashboard.js"></script>
+    <script>
+      feather.replace();
+    </script>
+  </body>
+</html>

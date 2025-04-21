@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login - Jewelbox</title>
+    <link rel="icon" href="img/jewel.svg" type="image/svg+xml" />
+
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body class="bg-purple-50 font-sans">
+    <section class="min-h-screen flex items-center justify-center">
+      <div class="bg-white p-8 rounded-2xl shadow-xl max-w-md w-full">
+        <div class="text-center mb-6">
+          <h2 class="text-3xl font-bold text-purple-700">Masuk ke Jewelbox</h2>
+          <p class="text-sm text-purple-500">
+            Temukan perhiasan yang kamu impikan ✨
+          </p>
+        </div>
+
+        <form id="loginForm" class="flex flex-col gap-4">
+          <div>
+            <input
+              type="text"
+              id="usernameOrEmail"
+              name="email"
+              placeholder="Username atau Email"
+              class="p-3 border border-purple-300 rounded-xl w-full focus:outline-none focus:ring-2 focus:ring-purple-500"
+              required
+            />
+            <small id="error-username" class="text-red-600 text-sm"></small>
+          </div>
+
+          <div>
+            <input
+              type="password"
+              id="password"
+              name="password"
+              placeholder="Password"
+              class="p-3 border border-purple-300 rounded-xl w-full focus:outline-none focus:ring-2 focus:ring-purple-500"
+              required
+            />
+            <small id="error-password" class="text-red-600 text-sm"></small>
+          </div>
+
+          <button
+            type="submit"
+            class="bg-purple-700 text-white py-2 rounded-xl hover:bg-purple-800 transition duration-300 font-semibold"
+          >
+            Login
+          </button>
+        </form>
+
+        <div
+          id="loadingSpinner"
+          class="hidden text-center mt-4 text-purple-600"
+        >
+          <p>Memproses...</p>
+        </div>
+
+        <p class="mt-6 text-sm text-gray-600 text-center">
+          Belum punya akun?
+          <a
+            href="register.html"
+            class="text-purple-700 font-semibold hover:underline"
+            >Daftar di sini</a
+          >
+        </p>
+      </div>
+    </section>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+      AOS.init();
+    </script>
+    <script type="module" src="login.js"></script>
+  </body>
+</html>

@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="img/jewel.svg" type="image/svg+xml" />
+
+    <title>JewelBox</title>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Firebase SDK -->
+    <script type="module" src="firebase-check-auth.js"></script>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,300;0,400;0,700;1,700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Feather Icons -->
+    <script src="https://unpkg.com/feather-icons"></script>
+
+    <!-- My Style -->
+    <link rel="stylesheet" href="CSS/style.css" />
+  </head>
+
+  <body class="scroll-smooth">
+    <!-- Navbar start -->
+    <header class="bg-gradient-to-r from-pink-100 to-purple-200 shadow-lg">
+      <div
+        class="max-w-7xl mx-auto px-6 py-5 flex items-center justify-between"
+      >
+        <!-- Logo & Brand -->
+        <div class="flex items-center space-x-3">
+          <img
+            src="img/jewel.svg"
+            alt="JewelBox Logo"
+            class="h-10 w-10 rounded-full shadow-md border border-pink-400"
+          />
+          <h1 class="text-2xl font-bold text-purple-800 tracking-wide">
+            JewelBox
+          </h1>
+        </div>
+
+        <!-- Navigation -->
+        <nav class="hidden md:flex space-x-6 text-purple-700 font-medium">
+          <a href="#product-container" class="hover:text-pink-600 transition"
+            >Produk</a
+          >
+          <a href="#tentang" class="hover:text-pink-600 transition"
+            >Tentang Kami</a
+          >
+          <a href="#Testimoni" class="hover:text-pink-600 transition"
+            >Testimoni</a
+          >
+        </nav>
+
+        <!-- Button Login/Register -->
+        <div class="space-x-3">
+          <a
+            href="login.html"
+            class="bg-purple-600 hover:bg-purple-700 text-white px-4 py-2 rounded-full transition shadow-sm"
+            >Login</a
+          >
+          <a
+            href="register.html"
+            class="border border-purple-600 text-purple-600 hover:bg-purple-100 px-4 py-2 rounded-full transition shadow-sm"
+            >Register</a
+          >
+        </div>
+      </div>
+    </header>
+
+    <section
+      class="bg-gradient-to-br from-purple-100 via-pink-100 to-white py-16 px-6 md:px-12 lg:px-24"
+    >
+      <div
+        class="max-w-7xl mx-auto flex flex-col-reverse md:flex-row items-center justify-between gap-10"
+      >
+        <!-- Text Content -->
+        <div class="text-center md:text-left max-w-xl space-y-6">
+          <h2
+            class="text-4xl md:text-5xl font-extrabold text-purple-800 leading-tight"
+          >
+            Kilau Keindahan <br />
+            <span class="text-pink-500">Setiap Momen</span>
+          </h2>
+          <p class="text-lg text-purple-700">
+            Temukan koleksi eksklusif JewelBox — tempat di mana keanggunan
+            bertemu dengan makna. Cocok untuk hadiah, koleksi pribadi, dan
+            hari-hari spesialmu 💖
+          </p>
+          <div class="space-x-4">
+            <a
+              href="#produk"
+              class="inline-block bg-pink-600 hover:bg-pink-700 text-white px-6 py-3 rounded-full shadow transition"
+              >Lihat Produk</a
+            >
+            <a
+              href="#tentang"
+              class="inline-block border border-pink-600 text-pink-600 hover:bg-pink-100 px-6 py-3 rounded-full transition"
+              >Pelajari Lebih Lanjut</a
+            >
+          </div>
+        </div>
+
+        <!-- Image -->
+        <div class="w-full md:w-1/2">
+          <img
+            src="img/jewel5.jpg"
+            alt="Hero JewelBox"
+            class="w-full rounded-3xl shadow-xl"
+          />
+        </div>
+      </div>
+    </section>
+    <section class="bg-white py-16 px-6 md:px-12 lg:px-24" id="produk">
+      <div class="max-w-7xl mx-auto grid md:grid-cols-2 gap-10 items-center">
+        <!-- Image -->
+        <div>
+          <img
+            src="img/jewel3.jpg"
+            alt="Mengapa JewelBox"
+            class="w-full rounded-3xl shadow-lg"
+          />
+        </div>
+
+        <!-- Text -->
+        <div class="space-y-5" id="tentang">
+          <h2 class="text-3xl md:text-4xl font-bold text-purple-800">
+            Mengapa <span class="text-pink-500">JewelBox?</span>
+          </h2>
+          <p class="text-purple-700 text-lg">
+            Kami percaya bahwa setiap hadiah menyimpan makna. JewelBox hadir
+            untuk menyempurnakan momen penting dalam hidupmu dengan kemewahan
+            yang sederhana namun bermakna.
+          </p>
+          <ul class="space-y-3 text-purple-600">
+            <li class="flex items-start gap-2">
+              <svg
+                class="w-5 h-5 text-pink-500 mt-1"
+                fill="currentColor"
+                viewBox="0 0 20 20"
+              >
+                <path
+                  d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-11.41l3.29 3.3a1 1 0 01-1.42 1.4L10 9.41l-2.88 2.88a1 1 0 01-1.42-1.4l3.3-3.3a1 1 0 011.4 0z"
+                />
+              </svg>
+              Handmade dan eksklusif untuk tiap pesanan
+            </li>
+            <li class="flex items-start gap-2">
+              <svg
+                class="w-5 h-5 text-pink-500 mt-1"
+                fill="currentColor"
+                viewBox="0 0 20 20"
+              >
+                <path
+                  d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-11.41l3.29 3.3a1 1 0 01-1.42 1.4L10 9.41l-2.88 2.88a1 1 0 01-1.42-1.4l3.3-3.3a1 1 0 011.4 0z"
+                />
+              </svg>
+              Kemasan cantik yang siap hadiah
+            </li>
+            <li class="flex items-start gap-2">
+              <svg
+                class="w-5 h-5 text-pink-500 mt-1"
+                fill="currentColor"
+                viewBox="0 0 20 20"
+              >
+                <path
+                  d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-11.41l3.29 3.3a1 1 0 01-1.42 1.4L10 9.41l-2.88 2.88a1 1 0 01-1.42-1.4l3.3-3.3a1 1 0 011.4 0z"
+                />
+              </svg>
+              Material premium yang tahan lama
+            </li>
+          </ul>
+
+          <a
+            href="#produk"
+            class="inline-block mt-6 bg-purple-700 hover:bg-purple-800 text-white px-6 py-3 rounded-full transition"
+          >
+            Lihat Koleksi Kami
+          </a>
+        </div>
+      </div>
+    </section>
+    <section class="bg-purple-50 py-16 px-6 md:px-12 lg:px-24" id="Testimoni">
+      <div class="max-w-6xl mx-auto text-center space-y-12">
+        <!-- Judul -->
+        <div>
+          <h2 class="text-3xl md:text-4xl font-bold text-purple-800">
+            Apa Kata Mereka?
+          </h2>
+          <p class="text-purple-600 mt-2 text-lg">
+            Ribuan pelanggan telah mempercayai JewelBox untuk momen spesial
+            mereka.
+          </p>
+        </div>
+
+        <!-- Testimoni Cards -->
+        <div class="grid md:grid-cols-3 gap-6 overflow-y-autoscroll-smooth">
+          <!-- Card 1 -->
+          <div
+            class="bg-white shadow-xl p-6 rounded-2xl space-y-4 border border-pink-100"
+          >
+            <p class="text-purple-700 italic">
+              “Box-nya cantik banget, cocok buat hadiah ulang tahun sahabat.
+              Bahan juga premium!”
+            </p>
+            <div class="flex items-center justify-center gap-3">
+              <img
+                src="https://randomuser.me/api/portraits/women/44.jpg"
+                alt="Pelanggan 1"
+                class="w-10 h-10 rounded-full border-2 border-pink-400"
+              />
+              <span class="font-semibold text-purple-900">Alya, Bandung</span>
+            </div>
+          </div>
+
+          <!-- Card 2 -->
+          <div
+            class="bg-white shadow-xl p-6 rounded-2xl space-y-4 border border-pink-100"
+          >
+            <p class="text-purple-700 italic">
+              “Kemasannya super elegan, bikin surprise lebih berkesan. Love it!”
+            </p>
+            <div class="flex items-center justify-center gap-3">
+              <img
+                src="https://randomuser.me/api/portraits/women/65.jpg"
+                alt="Pelanggan 2"
+                class="w-10 h-10 rounded-full border-2 border-purple-400"
+              />
+              <span class="font-semibold text-purple-900">Indah, Jakarta</span>
+            </div>
+          </div>
+
+          <!-- Card 3 -->
+          <div
+            class="bg-white shadow-xl p-6 rounded-2xl space-y-4 border border-pink-100"
+          >
+            <p class="text-purple-700 italic">
+              “Sudah beli 3x dan selalu puas. Pelayanan cepat dan hasilnya
+              memukau!”
+            </p>
+            <div class="flex items-center justify-center gap-3">
+              <img
+                src="https://randomuser.me/api/portraits/women/32.jpg"
+                alt="Pelanggan 3"
+                class="w-10 h-10 rounded-full border-2 border-pink-400"
+              />
+              <span class="font-semibold text-purple-900">Nisa, Surabaya</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- <section class="bg-white py-8 px-4" id="products"></section> -->
+
+    <!-- Products Section start -->
+    <section class="bg-pink-50 py-8 px-4" id="products">
+      <h2 class="text-3xl font-bold text-center text-purple-800 mb-8">
+        ✨ Produk Unggulan JewelBox ✨
+      </h2>
+
+      <!-- Filter Box -->
+      <div
+        class="max-w-6xl mx-auto bg-white p-6 rounded-3xl shadow-xl space-y-6 border border-pink-100"
+      >
+        <!-- Baris 1: Pencarian & Reset -->
+        <div class="flex flex-col sm:flex-row gap-4">
+          <input
+            type="text"
+            id="searchInput"
+            placeholder="🔍 Cari Kotak Perhiasan Elegan..."
+            class="flex-1 px-5 py-3 border border-pink-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-400 transition"
+          />
+          <button
+            onclick="resetFilter()"
+            class="px-5 py-3 bg-red-400 text-white rounded-lg hover:bg-red-500 transition"
+          >
+            🔄 Reset
+          </button>
+        </div>
+
+        <!-- Baris 2: Sorting & Harga -->
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
+          <select
+            id="sortHarga"
+            class="px-4 py-3 border border-purple-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-400 transition"
+          >
+            <option value="">💸 Urutkan Harga</option>
+            <option value="terendah">Harga Terendah</option>
+            <option value="tertinggi">Harga Tertinggi</option>
+          </select>
+
+          <input
+            type="number"
+            id="hargaMin"
+            placeholder="💰 Harga Min"
+            class="px-4 py-3 border border-pink-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-400 transition"
+          />
+
+          <input
+            type="number"
+            id="hargaMax"
+            placeholder="💰 Harga Max"
+            class="px-4 py-3 border border-pink-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-400 transition"
+          />
+        </div>
+
+        <!-- Baris 3: Filter Bahan -->
+        <div>
+          <select
+            id="filterBahan"
+            class="w-full sm:w-1/2 px-4 py-3 border border-purple-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-400 transition"
+          >
+            <option value="">🎀 Semua Bahan</option>
+            <option value="Mutiara Laut & Rantai Emas">
+              Mutiara Laut & Rantai Emas
+            </option>
+            <option value="Perak & Kristal Swarovski">
+              Perak & Kristal Swarovski
+            </option>
+            <option value="Batu Ametis & Rantai Baja">
+              Batu Ametis & Rantai Baja
+            </option>
+            <option value="purplegold Plated & Zircon">
+              purplegold Plated & Zircon
+            </option>
+          </select>
+        </div>
+      </div>
+
+      <!-- Container Produk -->
+      <div
+        id="product-container"
+        class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 mt-12 px-4 max-w-7xl mx-auto transition-all duration-300 ease-in-out"
+      ></div>
+    </section>
+
+    <!-- Footer start -->
+    <footer class="bg-white border-t mt-12">
+      <div
+        class="container mx-auto px-4 py-8 text-center text-sm text-gray-600"
+      >
+        <p>Alamat: Jl. Permata Indah No. 123, Jakarta</p>
+        <p>Email: contact@jewelbox.com | Telp: +62 812-3456-7890</p>
+        <p class="mt-4">&copy; 2024 The Jewel Box. All rights reserved.</p>
+      </div>
+    </footer>
+
+    <!-- Footer end -->
+
+    <!-- Sticky Cart -->
+    <div
+      id="stickyCart"
+      class="fixed top-24 right-6 bg-white/30 backdrop-blur-lg border border-purple-300 text-purple-600 px-5 py-3 rounded-full shadow-xl flex items-center gap-3 cursor-pointer hover:bg-purple-100 hover:text-purple-700 transition-all duration-300 z-50"
+    >
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        class="h-6 w-6 text-purple-600 animate-bounce-slow"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke="currentColor"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-1.5 6H19m-5 0a1 1 0 001 1m-6 0a1 1 0 01-1-1"
+        />
+      </svg>
+      <span> <span id="cartCount" class="font-semibold">0</span> item </span>
+    </div>
+
+    <!-- Side Panel Keranjang -->
+    <div
+      id="cartPanel"
+      class="fixed top-0 right-0 w-80 h-full bg-white shadow-lg transform translate-x-full transition-transform duration-300 z-50 overflow-y-auto"
+    >
+      <div class="p-4 border-b flex justify-between items-center">
+        <h3 class="text-lg font-bold">Keranjang Belanja</h3>
+        <button
+          id="closeCartPanel"
+          class="text-gray-600 hover:text-red-600 text-xl"
+        >
+          ✕
+        </button>
+      </div>
+      <div id="cartContainer" class="p-4 space-y-4">
+        <!-- Isi keranjang akan ditampilkan di sini -->
+      </div>
+    </div>
+    <style>
+      @keyframes bounce-slow {
+        0%,
+        100% {
+          transform: translateY(0);
+        }
+        50% {
+          transform: translateY(-4px);
+        }
+      }
+      .animate-bounce-slow {
+        animation: bounce-slow 2.5s infinite;
+      }
+      html {
+        scroll-behavior: smooth;
+      }
+    </style>
+
+    <!-- Feather Icons -->
+    <script>
+      feather.replace();
+    </script>
+
+    <!-- My Javascript -->
+    <script type="module" src="script.js" defer></script>
+  </body>
+</html>

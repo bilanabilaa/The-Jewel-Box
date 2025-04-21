@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dashboard Admin | JewelBox</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap"
+    />
+    <script src="https://unpkg.com/feather-icons"></script>
+    <style>
+      body {
+        font-family: "Poppins", sans-serif;
+      }
+    </style>
+  </head>
+  <body class="bg-gray-100">
+    <!-- Sidebar -->
+    <div class="flex min-h-screen">
+      <aside class="w-64 bg-purple-700 text-white p-6 space-y-6">
+        <div class="text-2xl font-bold">JewelBox Admin</div>
+        <nav class="space-y-3">
+          <a href="#" class="block hover:text-purple-300">📦 Kelola Produk</a>
+          <a href="#" class="block hover:text-purple-300">👥 Kelola Pengguna</a>
+          <a href="#" class="block hover:text-purple-300">🧾 Riwayat Order</a>
+          <a href="#" id="logoutBtn" class="block hover:text-pink-100"
+            >🚪 Logout</a
+          >
+        </nav>
+      </aside>
+
+      <!-- Konten Utama -->
+      <main class="flex-1 p-8 space-y-8">
+        <header class="flex justify-between items-center">
+          <h1 class="text-3xl font-semibold text-purple-800">
+            Dashboard Admin
+          </h1>
+          <div class="text-sm text-gray-500">Halo, Admin</div>
+        </header>
+
+        <!-- Kotak Statistik -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
+          <div class="bg-white shadow rounded-xl p-4">
+            <h2 class="text-sm text-gray-500">Total Produk</h2>
+            <p class="text-2xl font-bold text-purple-700">124</p>
+          </div>
+          <div class="bg-white shadow rounded-xl p-4">
+            <h2 class="text-sm text-gray-500">Total Pengguna</h2>
+            <p class="text-2xl font-bold text-purple-700">342</p>
+          </div>
+          <div class="bg-white shadow rounded-xl p-4">
+            <h2 class="text-sm text-gray-500">Order Masuk</h2>
+            <p class="text-2xl font-bold text-purple-700">58</p>
+          </div>
+          <div class="bg-white shadow rounded-xl p-4">
+            <h2 class="text-sm text-gray-500">Pendapatan</h2>
+            <p class="text-2xl font-bold text-purple-700">Rp 12.300.000</p>
+          </div>
+        </div>
+
+        <!-- Placeholder Konten Lanjutan -->
+        <section>
+          <h2 class="text-xl font-semibold text-purple-700 mb-4">
+            Konten Manajemen
+          </h2>
+          <div
+            class="bg-white border border-dashed border-gray-300 rounded-xl p-6 text-center text-gray-400"
+          >
+            Pilih menu di sidebar untuk mulai mengelola data 💼
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <script>
+      feather.replace();
+    </script>
+    <script type="module">
+      import { initializeApp } from "https://www.gstatic.com/firebasejs/10.11.0/firebase-app.js";
+      import {
+        getAuth,
+        signOut,
+      } from "https://www.gstatic.com/firebasejs/10.11.0/firebase-auth.js";
+
+      const firebaseConfig = {
+        apiKey: "AIzaSyCcn2psbwGtCMNofbtMMVLrzn5GjFDggYM",
+        authDomain: "login2-3d9de.firebaseapp.com",
+        projectId: "login2-3d9de",
+        storageBucket: "login2-3d9de.appspot.com",
+        messagingSenderId: "297506282512",
+        appId: "1:297506282512:web:f4ef35d1b809b1ce1d3e95",
+        measurementId: "G-ND1JCBQE89",
+      };
+
+      // 🔧 Inisialisasi Firebase dulu
+      const app = initializeApp(firebaseConfig);
+      const auth = getAuth(app);
+
+      // 🔒 Logout Event
+      document
+        .getElementById("logoutBtn")
+        .addEventListener("click", async (e) => {
+          e.preventDefault();
+          await signOut(auth);
+          window.location.href = "index.html";
+        });
+    </script>
+  </body>
+</html>

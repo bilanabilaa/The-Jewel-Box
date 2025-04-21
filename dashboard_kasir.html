@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dashboard Kasir | JewelBox</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/feather-icons"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      body {
+        font-family: "Inter", sans-serif;
+      }
+    </style>
+  </head>
+  <body class="bg-gray-100">
+    <div class="flex min-h-screen">
+      <!-- Sidebar -->
+      <aside class="w-64 bg-purple-600 text-white p-6 space-y-6">
+        <div class="text-2xl font-bold">JewelBox Kasir</div>
+        <nav class="space-y-3">
+          <a href="#" class="block hover:text-pink-100">🧾 Transaksi Baru</a>
+          <a href="#" class="block hover:text-pink-100">📋 Riwayat Transaksi</a>
+          <a href="#" class="block hover:text-pink-100">📦 Cek Stok</a>
+          <a href="#" id="logoutBtn" class="block hover:text-pink-100"
+            >🚪 Logout</a
+          >
+        </nav>
+      </aside>
+
+      <!-- Konten Utama -->
+      <main class="flex-1 p-8 space-y-8">
+        <header class="flex justify-between items-center">
+          <h1 class="text-3xl font-semibold text-purple-700">
+            Dashboard Kasir
+          </h1>
+          <div class="text-sm text-gray-600">Selamat datang, Kasir</div>
+        </header>
+
+        <!-- Ringkasan Hari Ini -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+          <div class="bg-white shadow rounded-xl p-4">
+            <h2 class="text-sm text-gray-500">Transaksi Hari Ini</h2>
+            <p class="text-2xl font-bold text-purple-700">17</p>
+          </div>
+          <div class="bg-white shadow rounded-xl p-4">
+            <h2 class="text-sm text-gray-500">Total Penjualan</h2>
+            <p class="text-2xl font-bold text-purple-700">Rp 3.540.000</p>
+          </div>
+          <div class="bg-white shadow rounded-xl p-4">
+            <h2 class="text-sm text-gray-500">Stok Hampir Habis</h2>
+            <p class="text-2xl font-bold text-purple-700">5 Produk</p>
+          </div>
+        </div>
+
+        <!-- Placeholder untuk fitur kasir -->
+        <section>
+          <h2 class="text-xl font-semibold text-purple-700 mb-4">Menu Kasir</h2>
+          <div
+            class="bg-white border border-dashed border-gray-300 rounded-xl p-6 text-center text-gray-400"
+          >
+            Silakan pilih menu di sidebar untuk memulai transaksi 💳
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <script>
+      feather.replace();
+    </script>
+    <script type="module">
+      import { initializeApp } from "https://www.gstatic.com/firebasejs/10.11.0/firebase-app.js";
+      import {
+        getAuth,
+        signOut,
+      } from "https://www.gstatic.com/firebasejs/10.11.0/firebase-auth.js";
+
+      const firebaseConfig = {
+        apiKey: "AIzaSyCcn2psbwGtCMNofbtMMVLrzn5GjFDggYM",
+        authDomain: "login2-3d9de.firebaseapp.com",
+        projectId: "login2-3d9de",
+        storageBucket: "login2-3d9de.appspot.com",
+        messagingSenderId: "297506282512",
+        appId: "1:297506282512:web:f4ef35d1b809b1ce1d3e95",
+        measurementId: "G-ND1JCBQE89",
+      };
+
+      // 🔧 Inisialisasi Firebase dulu
+      const app = initializeApp(firebaseConfig);
+      const auth = getAuth(app);
+
+      // 🔒 Logout Event
+      document
+        .getElementById("logoutBtn")
+        .addEventListener("click", async (e) => {
+          e.preventDefault();
+          await signOut(auth);
+          window.location.href = "index.html";
+        });
+    </script>
+  </body>
+</html>
