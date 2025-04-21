@@ -1,0 +1,10 @@
+.sticky-cart {
+    position: fixed;
+    top: 10px; /* Jarak dari atas */
+    right: 10px; /* Jarak dari kanan */
+    background-color: #0abde3; /* Warna latar belakang */
+    color: white; /* Warna teks */
+    padding: 10px; /* Padding */
+    border-radius: 5px; /* Sudut melengkung */
+    z-index: 1000; /* Pastikan di atas elemen lain */
+}
