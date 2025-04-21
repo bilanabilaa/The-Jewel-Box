@@ -1,0 +1,499 @@
+* {
+	padding:0;
+	margin:0;
+	font-family: 'Quicksand', sans-serif;
+}
+body {
+	background-color: #e7e7e7;
+}
+a {
+	color: inherit;
+	text-decoration: none;
+}
+#bg-login {
+    display: flex;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    background-image: url('../img/bg\ web.png'); 
+    background-position: center;
+}
+.box-login {
+    width: 300px;
+    min-height: 300px; /* Tinggi minimum untuk menampung semua elemen */
+    border: 1px solid #1900ff;
+    background-color: rgba(255, 255, 255, 0.9); /* Latar belakang putih dengan transparansi */
+    padding: 20px;
+    box-sizing: border-box;
+    border-radius: 10px;
+    margin: 50px auto; /* Memusatkan box di tengah halaman */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Bayangan halus */
+}
+
+.box-login h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #1900ff; /* Warna judul */
+}
+
+.input-control {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    box-sizing: border-box;
+    background-color: rgba(255, 255, 255, 0.8); /* Latar belakang input dengan transparansi */
+    border: 1px solid #1900ff; /* Border biru */
+    border-radius: 5px; /* Sudut yang lebih halus */
+    color: #333; /* Warna teks */
+}
+
+.input-control::placeholder {
+    color: #aaa; /* Warna placeholder */
+}
+
+.btn {
+    padding: 10px 15px;
+    background-color: #1900ff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;
+    transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease; /* Efek transisi */
+
+}
+
+.btn:hover {
+    background-color: #1900ff; /* Warna latar belakang saat dihover */
+    color: white; /* Warna teks saat dihover */
+    transform: scale(1.05); /* Sedikit membesar saat dihover */
+    text-decoration: none; /* Pastikan tidak ada garis bawah saat dihover */
+}
+
+.additional-links {
+    margin-top: 10px; /* Jarak atas untuk pemisahan */
+    text-align: center; /* Memusatkan teks */
+}
+
+header {
+	background-color: #0400ff;
+	color: #fff;
+}
+header h1 {
+	float: left;
+	padding:10px 0;
+}
+
+header ul {
+	float: right;
+}
+header ul li {
+	display: inline-block;
+}
+header ul li a {
+	padding:20px 0 20px 15px;
+	display: inline-block;
+}
+header h1:hover, ul li a:hover {
+    color: #007bff;
+}
+footer {
+	padding:25px 0;
+}
+.container {
+	width: 80%;
+	margin:0 auto;
+	text-align: center;
+}
+.container:after {
+	content: '';
+	display: block;
+	clear: both;
+}
+.container-produk {
+	width: 60%;
+	margin:0 auto;
+	text-align: center;
+}
+.section {
+	padding:25px 0;
+	font-size:15px;
+}
+.box {
+	background-color: #ffffff;
+	border-radius: 10px;
+	padding:25px;
+	box-sizing: border-box;
+	margin:10px 0 25px 0;
+	text-align: left;
+}
+
+.box:after {
+	content: '';
+	display: block;
+	clear: both;
+}
+#bg-dashboard {
+	justify-content: center;
+    background-attachment: fixed;
+	background-image: url('../img/bg\ web.png'); 
+}
+.box-custom{
+	background-color: #ffffffbd;
+	border-radius: 10px;
+	padding:15px;
+	box-sizing: border-box;
+	margin:10px 0 25px 0;
+	text-align: center;
+	font-size: 25px;
+	color: #10006d;
+	box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+}
+.add-pk {
+    display: inline-block; 
+    padding: 5px 15px; 
+    background-color: #ff0000; 
+    color: white; 
+    border-radius: 5px; 
+    text-decoration: none; 
+    font-weight: bold; 
+    transition: background-color 0.3s; 
+}
+
+.add-pk:hover {
+    background-color: #202020; 
+}
+.table {
+    width: 100%;
+    border-collapse: collapse; 
+    margin-top: 20px;
+}
+
+.table th, .table td {
+    padding: 12px; 
+    text-align: left; 
+    border: 1px solid #ddd; 
+}
+
+.table th {
+    background-color: #007bff; 
+    color: white; 
+    font-weight: bold; 
+}
+
+.table tr:nth-child(even) {
+    background-color: #f2f2f2; 
+}
+
+.table tr:hover {
+    background-color: #e9ecef; 
+}
+
+.table td {
+    color: #333; 
+}
+.edit-link {
+    color: #28a745; 
+    text-decoration: none; 
+    font-weight: bold; 
+}
+
+.edit-link:hover {
+    text-decoration: underline;
+}
+
+.delete-link {
+    color: #dc3545; 
+    text-decoration: none; 
+    font-weight: bold; 
+}
+
+.delete-link:hover {
+    text-decoration: underline; 
+}
+.search {
+	padding:15px 0;
+	text-align: center;
+}
+.search input[type=text] {
+	width: 60%;
+	padding:10px;
+}
+.search input[type=submit] {
+	padding:12px 15px;
+	background-color: #0059ff;
+	color:#fff;
+	border:none;
+	cursor: pointer;
+}
+.col-5 {
+    margin-top: 10px;
+	width:20%;
+	text-align: center;
+	float:left;
+	padding:10px;
+	box-sizing: border-box;
+}
+
+.col-4 {
+    margin-top: 15px;
+	width:25%;
+	height: 50px;
+	margin-bottom: 10px;
+}
+
+.col-4 img {
+	width: 300px;
+    border-radius: 25px;
+    border: 5px solid #ffffff6e;
+}
+
+.col-4:hover {
+    scale: 1.1;
+}
+
+.col-4-produk {
+	width:25%;
+	height: 250;
+	float: left;
+	padding:30px;
+	box-sizing: border-box;
+	margin-bottom: 10px;
+}
+.col-4-produk:hover {
+	box-shadow: 0 0 3px #999;
+}
+.col-4-produk img {
+	width: 100%;
+}
+.col-4-produk .nama {
+	color: #666;
+	margin-bottom: 5px;
+}
+.col-4-produk .harga {
+	font-weight: bold;
+	color:#C70039;
+	float: right;
+}
+.footer {
+	padding:25px 0;
+	background-color: #333;
+	color: #fff;
+	text-align: center;
+}
+.footer p {
+	margin-bottom: 10px;
+}
+.footer small {
+	margin-top: 25px;
+	display: inline-block;
+}
+.col-2 {
+	width: 50%;
+	min-height: 200px;
+	padding:10px;
+	box-sizing: border-box;
+	float: left;
+}
+.col-2 img {
+	border:1px solid #f9f9f9;
+	padding:5px;
+	box-sizing: border-box;
+}
+.col-2 h3 {
+	margin-bottom: 10px;
+}
+.col-2 h4 {
+	color: #C70039;
+}
+.col-2 p {
+	margin:15px 0;
+	text-align: justify;
+	line-height: 25px;
+	font-size:14px;
+}
+.back {
+    display: block; 
+    text-align: center;
+    margin-top: 15px; 
+    color: #1900ff; 
+    font-size: 14px; /* Ukuran font */
+    text-decoration: none; /* Menghilangkan garis bawah default */
+    padding: 8px 12px; /* Padding untuk membuat teks lebih nyaman diklik */
+    border: 1px solid #1900ff; /* Border dengan warna biru */
+    border-radius: 5px; /* Sudut yang melengkung */
+    transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease; /* Efek transisi */
+}
+
+.back:hover {
+    background-color: #1900ff; /* Warna latar belakang saat dihover */
+    color: white; /* Warna teks saat dihover */
+    transform: scale(1.05); /* Sedikit membesar saat dihover */
+    text-decoration: none; /* Pastikan tidak ada garis bawah saat dihover */
+}
+.image-container {
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+	margin-bottom: 20px;
+    object-fit: cover;
+}
+
+.profile-image {
+    width: 180px; /* Ukuran gambar */
+    height: 180px; /* Ukuran gambar */
+    border-radius: 50%; /* Membuat gambar bulat */
+    border: 3px solid #007bff; /* Border dengan warna biru */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Efek bayangan */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Efek transisi */
+}
+
+/* Efek hover pada gambar */
+.profile-image:hover {
+    transform: scale(1.1); /* Membesarkan gambar saat dihover */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Bayangan lebih tebal saat dihover */
+}
+/* Gaya untuk header dan dropdown */
+header ul li {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown {
+    display: inline-block;
+    margin-left: 10px;
+}
+
+.dropbtn {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    color: white;
+    padding: 10px 15px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.dropbtn:hover {
+    background-color: rgba(255, 255, 255, 0.1); /* Efek hover */
+    transform: scale(1.1); /* Sedikit membesar saat dihover */
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #ffffff;
+    min-width: 50px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    right: auto;
+    border-radius: 5px;
+    overflow: hidden;
+    animation: fadeIn 0.3s ease-in-out; /* Animasi muncul */
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.dropdown-content a {
+    float: none;
+    color: #333;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.dropdown-content a:hover {
+    background-color: #007bff;
+    color: white;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/* Efek tambahan untuk ikon dropdown */
+.dropbtn::after {
+	content: '▼';
+    margin-left: 5px;
+    font-size: 12px;
+    transition: transform 0.3s ease;
+}
+
+.dropdown:hover .dropbtn::after {
+	transform: rotate(180deg);
+}
+.box-custom-tk{
+	background-color: #ffffffce;
+	border-radius: 10px;
+	padding:15px;
+	box-sizing: border-box;
+	margin:10px 0 25px 0;
+	text-align:justify;
+	font-size: 20px;
+	color: #10006d;
+	box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+}
+.box-custom-tk h3 {
+	text-align: center;
+}
+
+.vidio {
+    text-align: center;
+    margin :20px;
+}
+
+.vidio button {
+    background-color: #0003c7;
+    color: white;
+    padding: 8px;
+    font-size: large;
+    border: none;
+    border-radius: 5px;
+    margin: 5px;
+    cursor: pointer;
+}
+
+.vidio button:hover {
+    transform: scale(1.1);
+    background-color: #007bff;
+}
+
+#videoku {
+    background-color: #ffffffce;
+    border: 1px solid #ddd;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+@media screen and (max-width: 768px){
+	.container {
+		width: 90%;
+	}
+	.col-5 {
+		width:50%;
+		margin-bottom: 10px;
+	}
+	.col-4 {
+		width: 50%;
+		height: 300px;
+	}
+	.col-2 {
+		width:100%;
+	}
+.dropdown {
+	float: left;
+	overflow: hidden;
+}
+}
